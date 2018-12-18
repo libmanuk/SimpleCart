@@ -1,0 +1,182 @@
+/* Simple Cart Styles */
+/* These styles are for use with the SPOKEdb-O Omeka Theme. */
+
+#cartstatus {
+    margin-bottom: 30px;
+    float: right;
+    color: #369;
+    padding-right: 25px;
+    font-size: 20px;
+}
+
+#cartsubmit {
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 7px;
+    color: #fff;
+    font-size: 15px;
+    border: 0 solid #0070b3;
+    background-color: #0070b3;
+}
+
+#cartaddto {
+    display: block;
+    padding: 7px;
+    color: #fff;
+    font-size: 15px;
+    border: 0 solid #0070b3;
+    background-color: #0070b3;
+}
+
+.carttab {
+    overflow: hidden;
+    -webkit-appearance: none;
+    color: #fff;
+    max-width: 180px;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carttab button {
+    background-color: inherit;
+    /* float: left; */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 14px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.carttab button:hover {
+    background-color: #0070b3;
+}
+
+.carttab button.active {
+    background-color: #ccc;
+    display: none !important;
+}
+
+/* Default State */
+
+#clickthru {
+    background: #fff;
+    width: 100%;
+    line-height: 1.2em;
+    display: block;
+    padding: 0 0 0 0;
+}
+
+#defaultOpen {
+    display: none;
+    background-color: #fff;
+    color: #0070b3;
+    position: static;
+    right: 50%;
+    top: 210px;
+}
+
+#defaultClosed {
+    position: static;
+    right: 50%;
+    top: 210px;
+    padding: 7px;
+    margin: 0 10px 0 0;
+    font-size: 15px;    
+    border: 0 solid #0070b3;
+    background-color: #0070b3;
+}
+
+/* Checkbox clickthru */
+
+#fortoggle { 
+    -webkit-appearance: none !important;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    color: #fff;
+    padding: 7px;
+    float: left;
+    background-color: green;
+}
+
+#fornotoggle { 
+    -webkit-appearance: none !important;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    padding: 7px;
+    float: left;
+    text-decoration: none;
+    color: #fff;
+    background-color: #BD3D3A;
+    margin-right: 100px;
+}
+
+#manage_cart .int_use {
+    display: none;
+}
+
+#manage_cart #intlimit {
+    display: block !important;
+}
+
+#request-details #intlimit {
+    display: none !important;
+}
+
+#request-details {
+    display: none;
+}
+
+#request-details .divTable {
+    display: none;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 0 solid #ccc;
+    border-top: none;
+}
+
+/* Clickthru State */
+
+input[type=radio]:checked ~ #checkout #clickthru {
+    display: none;
+}
+input[type=radio]:checked ~ #fortoggle {
+    display: none;
+}
+
+input[type=radio]:checked ~ #checkout #request-details {
+    display: block !important;
+}
+
+
+/* Toggled State */
+
+input[type=checkbox]:checked ~ #fornotoggle {
+    display: none;
+}
+
+.hideiframe {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+#cartstatus {
+    float: left;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+}
