@@ -1,4 +1,3 @@
-
 //Options:
 VarDivider            = '&';
 DisplayNotice         = false;
@@ -25,7 +24,6 @@ OutputItemAddtlInfo    = 'RESTRICTION_';
 AppendItemNumToOutput  = true;
 HiddenFieldsToCheckout = false;
 
-
 if ( !bLanguageDefined ) {
    strSorry  = "I'm Sorry, your list is full, please proceed and submit.";
    strAdded  = "added";
@@ -34,7 +32,6 @@ if ( !bLanguageDefined ) {
    strReqButton = "Request";
    bLanguageDefined = true;
 }
-
 
 function CKquantity(checkString) {
    var strNewQuantity = "";
@@ -50,7 +47,6 @@ function CKquantity(checkString) {
 
    return(strNewQuantity);
 }
-
 
 function AddToCart(thisForm) {
    var iNumberOrdered = 0;
@@ -96,7 +92,6 @@ function AddToCart(thisForm) {
    else
       strRESTRICTION    = thisForm.RESTRICTION.value;
 
-
    //Is this interview already in the list?  If so, increment quantity instead of adding another.
    for ( i = 1; i <= iNumberOrdered; i++ ) {
       NewOrder = "Order." + i;
@@ -140,7 +135,6 @@ function AddToCart(thisForm) {
       }
    }
 
-
    if ( !bAlreadyInCart ) {
       iNumberOrdered++;
 
@@ -166,7 +160,6 @@ function AddToCart(thisForm) {
       alert(notice);
 }
 
-
 function getCookieVal (offset) {
    var endstr = document.cookie.indexOf (";", offset);
 
@@ -175,14 +168,12 @@ function getCookieVal (offset) {
    return(unescape(document.cookie.substring(offset, endstr)));
 }
 
-
 function FixCookieDate (date) {
    var base = new Date(0);
    var skew = base.getTime();
 
    date.setTime (date.getTime() - skew);
 }
-
 
 function GetCookie (name) {
    var arg = name + "=";
@@ -200,7 +191,6 @@ function GetCookie (name) {
    return(null);
 }
 
-
 function SetCookie (name,value,expires,path,domain,secure) {
    document.cookie = name + "=" + escape (value) +
                      ((expires) ? "; expires=" + expires.toGMTString() : "") +
@@ -208,7 +198,6 @@ function SetCookie (name,value,expires,path,domain,secure) {
                      ((domain) ? "; domain=" + domain : "") +
                      ((secure) ? "; secure" : "");
 }
-
 
 function DeleteCookie (name,path,domain) {
    if ( GetCookie(name) ) {
@@ -218,10 +207,6 @@ function DeleteCookie (name,path,domain) {
                         "; expires=Thu, 01-Jan-70 00:00:01 GMT";
    }
 }
-
-
-
-
 
 function RemoveFromCart(RemOrder) {
    if ( confirm( strRemove ) ) {
@@ -255,7 +240,6 @@ function ClearCart(RemOrder) {
    }
 }
 
-
 function RemoveAll() {
    ClearCart(2);
    ClearCart(3);
@@ -268,7 +252,6 @@ function RemoveAll() {
    ClearCart(10);
    ClearCart(11);
 }
-
 
 QueryString.keys = new Array();
 QueryString.values = new Array();
@@ -283,7 +266,6 @@ function QueryString(key) {
    return value;
 } 
 
-
 function QueryString_Parse() {
    var query = window.location.search.substring(1);
    var pairs = query.split("&"); for (var i=0;i<pairs.length;i++) {
@@ -297,7 +279,6 @@ function QueryString_Parse() {
    }
 }
 
-
 //GET TOTAL
 
 function GetTotal() {
@@ -310,7 +291,6 @@ function GetTotal() {
       strOutput2 = "<span><a href=\"/cart\">&nbsp;" + iNumberOrdered + "&nbsp;interviews</a></span>";
        document.write(strOutput2);
 }
-
 
 //MANAGE CART 
 
@@ -368,14 +348,9 @@ function ManageCart() {
       var restrictStr = fields[6];
       var titleStr = fields[3];
 
-
-
-
 function myLevel() {
     var xlevel = document.getElementsByName("ServiceLevel")[0].value;
 }
-
-
 
       if ( iNumberOrdered > 0 ) {
 
@@ -395,16 +370,9 @@ function myLevel() {
                          "<input type=\"hidden\" name=\""+ CallNum + fields[0] + "\" value=\"" + fields[0] + "\">" + 
                          "</div><div class=\"divTableCell\"><input type=\"reset\" value=\"X\" onClick=\"RemoveFromCart("+i+")\"></div></div></div></div>";
 
-
-
       }
 
    }
-
-
-
-
-
 
    if ( iNumberOrdered > 0 )
             strOutput += "<span class=\"int_use\"><div id=\"sendrequest\" class=\"spokedb-request-hidden\"><br/><!--<input type=\"button\" value=\"Clear List\" id=\"cartsubmit\" onClick=\"RemoveAll()\">--><input type=\"hidden\" name=\"SubmitButton\" value=\"Submit Request\"/><input id=\"cartsubmit\" type=\"submit\" onclick=\"RemoveAll()\" /></div>" +
@@ -416,7 +384,4 @@ function myLevel() {
      
    document.close();
 
-
 }
-
-
