@@ -33,7 +33,7 @@ $(document).ready(function() {
             </div>
     <br/>
 <script>
-    ManageCart( );
+    PreCart( );
 </script>
   
     </div>
