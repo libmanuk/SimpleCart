@@ -136,7 +136,7 @@ class SimpleCartPlugin extends Omeka_Plugin_AbstractPlugin
     
     public function hookPublicHeader($args){
         echo "  <div id=\"cartstatus\">\n";
-        echo "  <i class=\"fas fa-shopping-cart\">\n";
+      //  echo "  <i class=\"fas fa-shopping-cart\">\n";
         echo "  <script>GetTotal();</script>\n";
         echo "  <script>\n";
         echo "  function cartReload() {";
@@ -155,6 +155,7 @@ class SimpleCartPlugin extends Omeka_Plugin_AbstractPlugin
         $req_int_date = metadata('item', array('General','Interview Date'));
         $req_int_coll = metadata('item', ('Collection Name'));
         $req_identifier = strip_formatting(metadata('item', array('Dublin Core', 'Identifier')));
+        $req_restriction = strip_formatting(metadata('item', array('Dublin Core', 'Rights')));
         $req_int_usage = strip_formatting(metadata('item', array('Rights', 'Interview Usage')));
         $req_int_rights = strip_formatting(metadata('item', array('Rights', 'Interview Rights')));
         $req_identifier = str_replace("%3A/",":/",$req_identifier);
@@ -171,7 +172,7 @@ class SimpleCartPlugin extends Omeka_Plugin_AbstractPlugin
         echo "  <input type=\"submit\" id=\"cartaddto\" value=\"$cart_add_to_button_text\">\n";
         echo "  <input type=\"hidden\" name=\"NAME\" value=\"$req_title\"\>\n";
         echo "  <input type=\"hidden\" name=\"ID_NUM\" value=\"$req_int_accession\">\n";
-        echo "  <input type=\"hidden\" name=\"RESTRICTION\" value=\"No Restrictions\">\n";
+        echo "  <input type=\"hidden\" name=\"RESTRICTION\" value=\"$req_restriction\">\n";
         echo "  <input type=\"hidden\" name=\"DATE\" value=\"$req_int_date\">\n";
         echo "  <input type=\"hidden\" name=\"LINK\" value=\"$req_int_url\">\n";
         echo "  <input type=\"hidden\" name=\"PROJECT\" value=\"$req_int_coll\">\n";
